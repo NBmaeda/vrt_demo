@@ -20,7 +20,7 @@ export const AllButtons = () => {
   return (
     <>
       <Button primary={true} label={"Button"} />
-      <Button primary={true} label={"Button"} />
+      <Button label={"Button"} />
       <Button size={"large"} label={"Button"} />
       <Button size={"small"} label={"Button"} />
     </>
