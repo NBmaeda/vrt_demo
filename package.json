@@ -33,6 +33,9 @@
     "@storybook/react": "^6.5.16",
     "@storybook/testing-library": "^0.0.13",
     "babel-loader": "^8.3.0",
+    "chromatic": "^6.17.1",
     "eslint-plugin-storybook": "^0.6.11"
-  }
+  },
+  "readme": "ERROR: No README data found!",
+  "_id": "vrt_demo@0.1.0"
 }
