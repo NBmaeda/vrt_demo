@@ -1,5 +1,5 @@
-import React from 'react';
-import './button.css';
+import React from "react";
+import { css, SerializedStyles } from "@emotion/react";
 
 interface ButtonProps {
   /**
@@ -13,7 +13,7 @@ interface ButtonProps {
   /**
    * How large should the button be?
    */
-  size?: 'small' | 'medium' | 'large';
+  size?: "small" | "medium" | "large";
   /**
    * Button contents
    */
@@ -29,16 +29,62 @@ interface ButtonProps {
  */
 export const Button = ({
   primary = false,
-  size = 'medium',
+  size = "medium",
   backgroundColor,
   label,
   ...props
 }: ButtonProps) => {
-  const mode = primary ? 'storybook-button--primary' : 'storybook-button--secondary';
+  const styleButton = css`
+    font-family: "Nunito Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 700;
+    border: 0;
+    border-radius: 3em;
+    cursor: pointer;
+    display: inline-block;
+    line-height: 1;
+  `;
+
+  const styleButtonPrimary = css`
+    color: white;
+    /* background-color: #fd1ebe; */
+    background-color: #1ea7fd;
+  `;
+  const styleButtonSecondary = css`
+    color: #333;
+    background-color: transparent;
+    /* box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 5px inset; */
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset;
+  `;
+  const styleButtonMode = primary ? styleButtonPrimary : styleButtonSecondary;
+
+  const styleButtonSize = new Map<string, SerializedStyles>([
+    [
+      "small",
+      css`
+        font-size: 14px;
+        padding: 12px 18px;
+      `,
+    ],
+    [
+      "medium",
+      css`
+        font-size: 18px;
+        padding: 14px 26px;
+      `,
+    ],
+    [
+      "large",
+      css`
+        font-size: 22px;
+        padding: 16px 38px;
+      `,
+    ],
+  ]);
+
   return (
     <button
       type="button"
-      className={['storybook-button', `storybook-button--${size}`, mode].join(' ')}
+      css={[styleButton, styleButtonMode, styleButtonSize.get(size)]}
       style={{ backgroundColor }}
       {...props}
     >
