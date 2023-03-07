@@ -46,12 +46,12 @@ export const Button = ({
 
   const styleButtonPrimary = css`
     color: white;
-    background-color: #fd1ebe;
+    background-color: #fd651e;
   `;
   const styleButtonSecondary = css`
     color: #333;
     background-color: transparent;
-    box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 5px inset;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 10px inset;
   `;
   const styleButtonMode = primary ? styleButtonPrimary : styleButtonSecondary;
 
