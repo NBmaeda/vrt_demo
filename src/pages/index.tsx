@@ -1,9 +1,10 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
-import styles from '@/styles/Home.module.css'
+import Head from "next/head";
+import Image from "next/image";
+import { Inter } from "next/font/google";
+import styles from "@/styles/Home.module.css";
+import { Button } from "@/stories/Button";
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   return (
@@ -26,7 +27,7 @@ export default function Home() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              By{' '}
+              By{" "}
               <Image
                 src="/vercel.svg"
                 alt="Vercel Logo"
@@ -57,6 +58,13 @@ export default function Home() {
               priority
             />
           </div>
+        </div>
+
+        <div style={{ padding: "100px 0" }}>
+          <Button primary={true} label={"Button"} />
+          <Button label={"Button"} />
+          <Button size={"large"} label={"Button"} />
+          <Button size={"small"} label={"Button"} />
         </div>
 
         <div className={styles.grid}>
@@ -119,5 +127,5 @@ export default function Home() {
         </div>
       </main>
     </>
-  )
+  );
 }
