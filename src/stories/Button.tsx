@@ -42,7 +42,6 @@ export const Button = ({
       ${styles[`storybook-button--${mode}`]} 
       ${styles[`storybook-button--${size}`]}`}
       style={{ backgroundColor }}
-      onClick={() => alert("clicked!")}
       {...props}
     >
       {label}
